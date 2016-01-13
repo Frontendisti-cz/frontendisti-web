@@ -1,0 +1,67 @@
+.ie7 a[href] *
+	cursor pointer
+
+@import "core/images.styl"
+@import "core/grid.styl"
+@import "core/icon.styl"
+@import "core/messages.styl"
+@import "core/toggles.styl"
+@import "core/separator.styl"
+@import "core/tabs.styl"
+@import "core/paging-portfolio.styl"
+@import "core/section.styl"
+@import "core/pager.styl"
+@import "core/progress-bar.styl"
+@import "core/skbox.styl"
+
+/*!
+ *	Forms
+ */
+@import "core/forms/input.styl"
+@import "core/forms/buttons.styl"
+
+
+.video
+	position relative
+	padding 56.25% 0 0
+	object
+	embed
+	iframe
+		position absolute
+		left 0
+		top 0
+		width 100%
+		height 100%
+	p
+		display none
+
+
+
+.twitter-tweet
+	margin $marginFill !important
+
+.social-icon
+	text-decoration none
+
+#mq
+	position absolute
+	top -5000px
+	left 0
+	@media(min-width: 701px)
+		left 701px
+	@media(min-width: 1001px)
+		left 1001px
+
+
+/*! #editable - common */
+
+a.light,
+.light a,
+a.comment-reply-link
+#cancel-comment-reply-link
+#menu-breadcrumb a
+	color $colorGrey /*! sn_global_text_secondary_color */
+	&:hover
+		color $colorHover /*! sn_global_link_color_hover */
+
+/*! /editable */

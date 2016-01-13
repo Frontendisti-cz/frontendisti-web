@@ -1,0 +1,62 @@
+.separator
+	position relative
+	color transparent
+	height 1px
+	overflow hidden
+	font-size 0px
+	line-height 0px
+	margin 40px 0 32px
+	&:before
+		content ''
+		display block
+		width 100%
+		height 100%
+		background $colorGrey
+	+ p
+	+ ul
+	+ ol
+	+ dl
+		//margin-top 39px
+
+	h1 + &
+		margin-top $marginTopFill
+	h2 + &,
+	h3 + &,
+	h4 + &,
+	h5 + &,
+	h6 + &
+		margin-top $marginTopFill + 1
+
+	.grid + &
+		margin-top 6px
+
+.separator-small
+	margin $marginBottom 0
+	&:before
+		vertical-align top
+		display inline-block
+		width 100px
+
+	+ p
+	+ ul
+	+ ol
+	+ dl
+		margin-top 30px
+	+ h6
+	+ .h6
+		margin-top 20px
+
+	/*+ p
+	+ ul
+	+ ol
+	+ dl
+		margin-top $marginBottom*/
+
+
+
+/*! #editable - common */
+
+.separator:before
+	background $colorGrey /*! sn_global_text_secondary_color */
+
+/*! /editable */

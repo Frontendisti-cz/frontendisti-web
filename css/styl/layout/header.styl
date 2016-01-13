@@ -1,0 +1,73 @@
+// Header
+#header
+	position absolute
+	.no-touch &
+		position fixed
+	top 0
+	left 0
+	width 100%
+	z-index 99
+	border-bottom 1px solid transparent
+
+	.row-main
+		padding 15px 0 14px
+	.wrap
+		display table
+		width 100%
+
+	.no-fixed-header &
+		position absolute
+
+#logo
+	vertical-align middle
+	display table-cell
+	font 0px/0px arial
+	margin 0
+	padding 0
+	height 60px
+	span
+		font-size 20px
+		line-height 30px
+	.toggle-menu
+		display none
+		position absolute
+		cursor pointer
+		right 0
+		top 50%
+		margin-top -15px
+		line-height 1
+
+#menu-main
+	text-align right
+	vertical-align middle
+	display table-cell
+
+@media(max-width: 1000px)
+	#logo
+		display block
+		line-height 60px
+		height auto
+		min-height 60px
+		position relative
+		.toggle-menu
+			display block
+	#menu-main
+		display block
+		text-align left
+
+/*! #editable - common */
+#header
+	background-color transparent /*! sn_header_background_color */
+	background-image none /*! sn_header_background_image */
+	background-repeat no-repeat /*! sn_header_background_repeat */
+	background-position 0 0 /*! sn_header_background_position */
+	background-attachment scroll /*! sn_header_background_attachment */
+	border-color transparent /*! sn_header_border_color */
+	// nezavolat mixinu
+	background-size unquote('auto /* sn_header_background_size */')
+
+#logo
+	.toggle-menu
+		color $colorMenu /*! sn_header_menu_color */
+
+/*! /editable */

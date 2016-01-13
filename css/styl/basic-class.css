@@ -1,0 +1,42 @@
+/*
+ *	Simply fast class
+ */
+.reset{border:none;margin:0;padding:0;background:none;box-shadow:none;}
+.reset td,.reset th{border:none;background:none;padding:0}
+.reset > li,.reset > dt,.reset > dd{margin:0;padding:0;background:none;border:none;float:none;width:auto}
+.reset li:before{display:none}
+.reset:hover{text-decoration:none}
+.l{float:left;display:inline}
+.r{float:right;display:inline}
+.cb{clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.cfx{zoom:1;}
+.cfx:after,.cfx:before{content:'';display:table;clear:both}
+.break{height:1px;font-size:1px;line-height:1px;clear:both;overflow:hidden;visibility:hidden;display:block;margin:0 !important;padding:0 !important;width:100%}
+.ctx{zoom:1;display:table-cell;}
+.ie7 .ctx{display:block}
+.ctx:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x "}
+.hide,.js .jsHide{display:none}
+.out,.js .jsOut{position:absolute;left:-5000px;top:-5000px}
+.vhide{position:absolute;height:1px;width:1px;overflow:hidden;border:0;clip:rect(0 0 0 0);margin:-1px;padding:0}
+.left{text-align:left}
+.right{text-align:right}
+.center{text-align:center}
+.lower{text-transform:lowercase}
+.upper{text-transform:uppercase}
+.bold{font-weight:500}
+.thin{font-weight:300}
+.italic{font-style:italic}
+.normal{font-style:normal}
+.top{vertical-align:top}
+.middle{vertical-align:middle}
+.big{font-size:20px}
+.small,small{font-size:16px}
+.error,.red{color:#c00}
+.green{color:#678713}
+.grey{color:#999}
+.nowrap{white-space:nowrap}
+/* #editable - common */
+.light{color:$colorGrey;/* sn_global_text_secondary_color */}
+/* /editable */

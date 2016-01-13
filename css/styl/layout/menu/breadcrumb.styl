@@ -1,0 +1,27 @@
+#menu-breadcrumb
+	color $colorGrey
+	margin-bottom $marginDiff
+	a
+		// barva stejná jako v core gray link
+		display inline-block
+		margin-right 10px
+	.arr
+		margin-right 10px
+		font-size 0px
+		@extend $icon
+		@extend .icon-breadcrumb-arrow
+		&:before
+			font-size 8px
+			position relative
+			top -1px
+	+ h1
+	+ h2
+		margin-top 0
+
+
+/*! #editable - common */
+
+#menu-breadcrumb
+	color $colorGrey /*! sn_global_text_secondary_color */
+
+/*! /editable */

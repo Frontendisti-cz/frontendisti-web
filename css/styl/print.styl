@@ -1,0 +1,68 @@
+@import 'lib.styl'
+
+body
+	width 100% !important
+	font-family arial,Verdana,sans-serif
+	color #000
+	background none
+	font-size 8pt
+	line-height 12pt
+
+@import 'print/hide.styl'
+@import 'print/heading.styl'
+@import 'print/table.styl'
+
+@import 'print/layout.styl'
+
+.reset
+	border none
+	margin 0
+	padding 0
+	background none
+	td
+	th
+		border none
+		background none
+		padding 0
+	> li
+	> dt
+	> dd
+		margin 0
+		padding 0
+		background none
+		border none
+		font-weight inherit
+		float none
+		display inherit
+		text-align inherit
+		width auto
+
+fieldset
+	border none
+	padding 0
+	margin 0
+
+p
+ul
+table
+	margin 0 0 .4cm
+a
+	color #000
+	text-decoration none
+
+img
+	border none
+	max-width 100%
+	height auto !important
+img.left
+img.l
+img.right
+img.r
+	margin 4px 0 30px 29px
+	float right
+	display inline
+	background #fff
+img.left
+img.l
+	float left
+	margin 4px 29px 30px 0

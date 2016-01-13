@@ -1,0 +1,71 @@
+.crossroad-comments
+	margin-top $marginTop
+	h3
+		margin-bottom $marginDiff
+	ul
+		margin 0
+		padding 0
+	li
+		position relative
+		padding-left 85px
+		font-size 16px
+		min-height 62px
+		&:before
+			display none
+	li + li,
+	li ul li
+		margin-top $marginTop
+	ul ul
+		margin-left -60px
+	.img
+		position absolute
+		top 3px
+		left 0
+	.title
+		font-size 13px
+	.h6
+		display inline
+
+	.bypostauthor
+		.img
+			background transparent
+
+.comment-respond
+	margin $marginTop 0 0
+	h3
+		margin-bottom $marginBottom + 5
+	p
+		margin-bottom $marginDiff
+
+.form-submit
+	display none
+
+
+.comment-awaiting-moderation
+	margin 0
+
+#cancel-comment-reply-link
+	@extend .small
+
+
+.pager-articles
+	margin $marginTop 0 0
+	.l
+	.r
+		width 45%
+	.r
+		text-align right
+	.h6
+		//margin 0
+
+
+.comment-form-author
+.comment-form-email
+.comment-form-url
+	max-width 350px
+
+
+/*! #editable - common */
+.comment-awaiting-moderation
+	font-weight 700 /*! sn_css_heading_weight */
+/*! /editable */

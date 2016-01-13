@@ -1,0 +1,50 @@
+// Images
+img
+	max-width 100%
+	height auto
+	.gm-style &
+		max-width none
+
+.img-content
+.wp-caption
+.aligncenter
+	// Space
+	display block
+	margin $marginFill
+	overflow hidden
+	.col &
+		+ h2
+		+ h3
+		+ h4
+		+ h5
+			margin-top 20px
+
+	// pokud je v gridu první obrázek
+	.col > &:first-child
+	.col > a > &:first-child
+		margin-top 7px
+	// pokud je v gridu poslední obrázek
+	.col > &:last-child
+	.col > a > &:last-child
+		margin-bottom 17px
+
+.alignright
+	float right
+	margin 15px 0 25px 25px
+	&:first-child
+		margin-top 15px
+
+.alignleft
+	float left
+	margin 15px 25px 25px 0
+	&:first-child
+		margin-top 15px
+
+.aligncenter
+	display block
+	margin 0 auto
+
+.wp-caption-text
+.gallery-caption
+	@extend .small
+	margin-top $marginBottom

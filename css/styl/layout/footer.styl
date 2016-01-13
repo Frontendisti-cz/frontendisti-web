@@ -1,0 +1,83 @@
+#footer
+	border-style solid
+	border-width 1px 0 0
+	padding 40px 0
+	margin-top 30px
+	font-size 16px
+	.widgets .col
+		width unit( 100 / 3, '%')
+	.widgets1 .col
+		width unit( 100 / 1, '%')
+	.widgets2 .col
+		width unit( 100 / 2, '%')
+
+/*! #editable - common */
+#footer
+	background-color transparent /*! sn_footer_background_color */
+	background-image none /*! sn_footer_background_image */
+	background-repeat no-repeat /*! sn_footer_background_repeat */
+	background-position 0 0 /*! sn_footer_background_position */
+	background-attachment scroll /*! sn_footer_background_attachment */
+	border-color transparent /*! sn_footer_border_color */
+	color $colorGrey /*! sn_footer_text_color */
+	// nezavolat mixinu
+	background-size unquote('auto /* sn_footer_background_size */')
+	// Titles
+	h1
+	.h1
+	h2
+	.h2
+	h3
+	.h3
+	h4
+	.h4
+	h5
+	.h5
+	h6
+	.h6
+	.box-title
+		color $colorTitle /*! sn_footer_title_color */
+	// Links
+	a
+		color $colorLink /*! sn_footer_link_color */
+		&:hover
+			color $colorHover /*! sn_footer_link_color_hover */
+
+	ul li:before,
+	.separator:before,
+	.message-notice,
+	.tabs-line a.active:before,
+	.tabs-line a.active:after
+		background $colorGrey /*! sn_footer_text_secondary_color */
+
+	// Tabs and input
+	.tabs-line a.active,
+	.inp-text
+		border-color $colorGrey /*! sn_footer_text_secondary_color */
+
+	// Buttons
+	.btn
+		span
+			color $colorButton /*! sn_footer_button_color */
+			border-color $colorButtonBg /*! sn_footer_button_background */
+		&:hover
+			span
+				background $colorButtonBgHover /*! sn_footer_button_background_hover */
+				border-color $colorButtonBgHover /*! sn_footer_button_background_hover */
+				color $colorButtonHover  /*! sn_footer_button_color_hover */
+
+	// Light
+	.light
+		color $colorGrey /*! sn_footer_text_secondary_color */
+
+	// Table
+	td
+	th
+		border-color $colorGrey /*! sn_footer_text_secondary_color */
+
+	@media(max-width:600px)
+		tr
+			border-color $colorGrey /*! sn_footer_text_secondary_color */
+
+
+/*! /editable */

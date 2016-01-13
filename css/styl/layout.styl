@@ -1,0 +1,105 @@
+body
+	position relative
+	&.admin-bar
+		margin-top -28px
+
+/*! #editable - common */
+body
+	color $color /*! sn_global_text_color */
+	font-weight 400 /*! sn_css_text_weight */
+	// výška loga minimálně 60
+	padding-top 60px /*! sn_css_padding_top */
+	background-color #fff /*! sn_global_page_background_color */
+	background-image none /*! sn_global_page_background_image */
+	background-repeat no-repeat /*! sn_global_page_background_repeat */
+	background-position 0 0 /*! sn_global_page_background_position */
+	background-attachment scroll /*! sn_global_page_background_attachment */
+	// nezavolat mixinu
+	background-size unquote('auto /* sn_global_page_background_size */')
+/*! /editable */
+
+#loader
+	//display none
+	position fixed
+	z-index 90
+	top 0
+	left 0
+	width 100%
+	height 100%
+	.js &
+		//display block
+
+/*! #editable - common */
+#loader
+	background-color #fff /*! sn_global_loader_color */
+	background-image none /*! sn_global_loader_image */
+	background-repeat no-repeat /*! sn_global_loader_repeat */
+	background-position 0 0 /*! sn_global_loader_position */
+	background-attachment scroll /*! sn_global_loader_attachment */
+	// nezavolat mixinu
+	background-size unquote('auto /* sn_global_loader_size */')
+/*! /editable */
+
+
+
+/*!
+ *	Base layout
+ */
+@import 'layout/header.styl'
+@import 'layout/main.styl'
+@import 'layout/footer.styl'
+
+
+/*!
+ *	Menu
+ */
+@import "layout/menu/accessibility.styl"
+@import "layout/menu/main.styl"
+@import "layout/menu/breadcrumb.styl"
+@import "layout/menu/paging.styl"
+
+/*!
+ *	Crossroads
+ */
+@import "layout/crossroad/articles.styl"
+@import "layout/crossroad/comments.styl"
+@import "layout/crossroad/portfolio.styl"
+
+
+/*!
+ *	Box
+ */
+@import "layout/box/side.styl"
+// @import "layout/box/sidemenu.styl"
+// @import "layout/box/instagram.styl"
+// @import "layout/box/tags.styl"
+// @import "layout/box/comments.styl"
+@import "layout/box/filter.styl"
+@import "layout/box/author.styl"
+@import "layout/box/article-top.styl"
+@import "layout/box/article-teaser.styl"
+@import "layout/box/article-bottom.styl"
+
+
+// shortcodes
+@import "layout/box/likes.styl"
+@import "layout/box/video.styl"
+@import "layout/box/slides.styl"
+@import "layout/box/testimonial.styl"
+@import "layout/box/quote.styl"
+
+
+
+/*!
+ *	Form
+ */
+@import "layout/form/search.styl"
+@import "layout/form/contact.styl"
+@import "layout/form/post-password.styl"
+
+
+:first-child
+	margin-top 0
+
+:last-child
+	//margin-bottom 0

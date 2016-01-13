@@ -1,0 +1,250 @@
+.section
+	margin 0 0 50px
+	text-decoration none
+	display block
+	.section
+		margin 0
+	+ .section
+		margin-top -50px
+	#main > &:first-child
+		margin-top -39px
+	#main > &:last-child
+		// odečíst margin patičky?
+		margin-bottom -30px
+	.grid:last-child
+		margin-bottom -21px
+
+.section-boxed
+	max-width $width
+	margin-left auto
+	margin-right auto
+	padding 0 $gutter
+	.section-boxed
+		padding 0
+
+	@media(max-width: 1000px)
+		max-width $widthT
+		padding 0 $gutterT
+
+
+.section-fullimage
+	text-align center
+
+.section-holder
+	display table
+	width 100%
+	table-layout fixed
+
+.section-inner
+	display table-cell
+	padding ( $marginTop + $marginBottom + 10 ) 0 $marginTop + 10
+
+// Slider
+.section-slider
+	z-index 5
+	display block
+	overflow-x hidden
+
+.section-slide
+	width 100%
+	+ .section-slide
+		position absolute
+		left -5000px
+		top -5000px
+	// + .cycle-slide
+	// 	display block
+	&.cycle-sentinel
+		.section
+		.section-holder
+			overflow hidden
+			display block
+
+// Mapa
+.section-map
+	display block
+	.row-main
+		height 100%
+	.map
+		height 100%
+
+// 404
+#post-404
+	display table-cell
+	vertical-align middle
+	padding 50px 0
+
+.error404 #main
+	display table
+	width 100%
+	padding-top 50px !important
+
+.touch .section-holder
+	background-attachment scroll !important
+
+/*! #editable - section */
+.page-id-0
+#post-0
+.section-slide #post-0
+	height auto /*! sn_css_section_min_height */
+	background-image none /*! sn_css_bg_image */
+	background-repeat no-repeat /*! sn_css_bg_repeat */
+	background-position 0 0 /*! sn_css_bg_position */
+	background-color transparent /*! sn_css_bg_color */
+	background-attachment scroll /*! sn_css_bg_attachment */
+	// nezavolat mixinu
+	background-size unquote('auto /* sn_css_bg_size */')
+	color $color /*! sn_css_text_color */
+	&.section-slider
+		height auto
+		min-height 0 /*! sn_css_section_min_height */
+	.section-holder
+		min-height 0 /*! sn_css_section_min_height */
+	.section-inner
+		vertical-align top /*! sn_css_section_horizont_pos */
+
+
+
+	// Titles
+	h1
+	.h1
+	h2
+	.h2
+	h3
+	.h3
+	h4
+	.h4
+	h5
+	.h5
+	h6
+	.h6
+	.box-title
+		color $colorTitle /*! sn_css_title_color */
+	// Links
+	a
+		color $colorLink /*! sn_css_link_color */
+		&:hover
+			color $colorHover /*! sn_css_link_color_hover */
+
+	ul li:before,
+	.separator:before,
+	.message-notice
+		background $colorGrey /*! sn_css_text_secondary_color */
+
+	// Input
+	.inp-text,
+	.widget_search input[type="search"]
+		color $color /*! sn_css_text_color */
+		border-color $colorGrey /*! sn_css_text_secondary_color */
+		&:focus
+			border-color $color /*! sn_css_text_color */
+
+	// Tabs
+	.tabs-line
+		a
+			&.active
+				border-color $colorGrey /*! sn_css_text_secondary_color */
+				&:before,
+				&:after
+					background-color $colorGrey /*! sn_css_text_secondary_color */
+				&:hover
+					color $colorLink /*! sn_css_link_color */
+
+	// Buttons
+	.btn
+		span
+			color $colorButton /*! sn_css_button_color */
+			border-color $colorButtonBg /*! sn_css_button_bg */
+		&:hover
+			span
+				background $colorButtonBgHover /*! sn_css_button_bg_hover */
+				border-color $colorButtonBgHover /*! sn_css_button_bg_hover */
+				color $colorButtonHover /*! sn_css_button_color_hover */
+
+	// Light
+	.light
+		color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Table
+	td
+	th
+		border-color $colorGrey /*! sn_css_text_secondary_color */
+
+	@media(max-width:600px)
+		tr
+			border-color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Pages
+	.pages a
+		background-color transparent /*! sn_css_text_color */
+		color transparent /*! sn_css_text_color */
+
+	// Pager arr
+	.pager .prev
+	.pager .next
+		color transparent /*! sn_css_text_color */
+
+	// Comments
+	.box-comments
+		.info
+			color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Filter
+	.box-filter
+		a.active
+			&:hover
+				color $colorLink /*! sn_css_link_color */
+
+	// Testamonials
+	.box-testimonial
+		background $colorGrey /*! sn_css_text_secondary_color */
+		&:after
+			border-top-color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Breadcrumb
+	#menu-breadcrumb
+		color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Gray link
+	a.light,
+	.light a,
+	a.comment-reply-link
+	#cancel-comment-reply-link
+	#menu-breadcrumb a
+		color $colorGrey /*! sn_css_text_secondary_color */
+		&:hover
+			color $colorHover /*! sn_css_link_color_hover */
+
+	// Menu paging
+	.menu-paging
+		.page-numbers
+			color $colorGrey /*! sn_css_text_secondary_color */
+			border-color $colorGrey /*! sn_css_text_secondary_color */
+			&:before
+				color $colorGrey /*! sn_css_text_secondary_color */
+
+		a.page-numbers:hover
+			border-color $color /*! sn_css_text_color */
+			color $color /*! sn_css_text_color */
+			&:before
+				color $color /*! sn_css_text_color */
+
+		.current
+			border-color $color /*! sn_css_text_color */
+			color $color /*! sn_css_text_color */
+
+	// Widgets
+	.box-title
+		#main &
+			border-bottom-color $colorGrey /*! sn_css_text_secondary_color */
+
+	.widget_rss
+		li
+			cite
+				color $colorGrey /*! sn_css_text_secondary_color */
+
+	// Portfolio
+	.paging-portfolio
+		border-color $colorGrey /*! sn_css_text_secondary_color */
+
+
+/*! /editable */

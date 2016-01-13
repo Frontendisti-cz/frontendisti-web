@@ -1,0 +1,66 @@
+/* BUTTON */
+
+.btn
+	inline-block(middle)
+	margin 0
+	padding 0
+	border none
+	text-decoration none
+	background none
+	margin 5px 7px 5px 0
+	.right &
+	&.r
+		margin-right 0
+	span
+		display block
+		font 500 $fontSize/$lineHeight $font
+		color $colorButton
+		border 2px solid $colorButtonBg
+		text-transform uppercase
+		padding 9px 50px 9px
+		transition border-color .3s ease, background-color .3s ease, color .3s ease
+	&:hover
+		span
+			background $colorButtonBgHover
+			border-color $colorButtonBgHover
+			color $colorButtonHover
+.btn-block
+	display block
+	margin-right 0
+	& + &
+		margin-top 10px !important
+
+.btn-s
+	span
+		padding 4px 40px 4px
+.btn-l
+	span
+		padding 14px 50px 14px
+
+
+
+// Wrap
+.buttons
+	@extend .row
+	font-size 0px
+	margin 30px -12px $marginBottom
+	.btn
+		margin 5px 12px
+	+ p
+		margin-bottom 30px
+
+
+/*! #editable - common */
+
+.btn
+	span
+		color $colorButton /*! sn_global_button_color */
+		border-color $colorButtonBg /*! sn_global_button_background */
+	&:hover
+		span
+			background $colorButtonBgHover /*! sn_global_button_bg_hover */
+			border-color $colorButtonBgHover /*! sn_global_button_bg_hover */
+			color $colorButtonHover  /*! sn_global_button_color_hover */
+
+
+/*! /editable */

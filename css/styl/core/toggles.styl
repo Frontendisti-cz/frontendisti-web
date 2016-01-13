@@ -1,0 +1,43 @@
+.toggle
+	margin $marginDiff 0
+	padding-left 25px
+	position relative
+
+.toggle-title
+	@extend h6
+	a
+		text-decoration none
+	.icon
+		@extend .icon-toggle-plus
+		// position absolute
+		// left 0
+		// bottom 0
+		position relative
+		top 1px
+		float left
+		margin-left -25px
+		font-size 15px
+	&.open
+		.icon
+			@extend .icon-toggle-minus
+
+.toggle-text
+	overflow hidden
+	zoom 1
+
+
+.toggle
+	&
+		+ h1
+		+ .h1
+		+ h2
+		+ .h2
+		+ h3
+		+ .h3
+		+ h4
+		+ .h4
+		+ h5
+		+ .h5
+		+ h6
+		+ .h6
+			margin-top $marginDiff

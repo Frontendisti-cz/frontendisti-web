@@ -1,0 +1,31 @@
+.box-filter
+	clear both
+	margin-bottom $marginTop
+	h2 + &,
+	h3 + &
+		margin-top $marginDiff
+	p
+		margin-bottom -21px
+	a
+		display inline-block
+		margin-right 23px
+		margin-bottom 21px
+		text-decoration none
+		&:hover
+			text-decoration underline
+	a.active
+		text-decoration underline
+		&:hover
+			color $color
+			cursor default
+
+
+/*! #editable - common */
+
+.box-filter
+	a.active
+		&:hover
+			color $colorLink /*! sn_global_link_color */
+
+
+/*! /editable */

@@ -1,0 +1,206 @@
+.box-side
+	margin-bottom 41px
+	font-size 16px
+	#footer &
+		// stejně jako col v gridu
+		margin-bottom $marginDiff + 5
+	ul
+		> li
+			&:before
+				top 10px
+
+.box-title
+	#main &
+		@extend .h6
+		margin-top 0
+		margin-bottom 17px
+		padding-bottom 12px
+		border-bottom 1px solid transparent
+	#footer &
+		@extend h4
+		margin-top 0
+
+.widget_meta
+.widget_categories
+.widget_pages
+.widget_archive
+	ul
+		a
+			text-decoration none
+			&:hover
+				text-decoration underline
+
+.widget_tag_cloud
+	.tagcloud
+		a
+			text-decoration none
+			margin-right 7px
+			&:hover
+				text-decoration underline
+
+.widget_search
+	.box-title
+		display none
+	.screen-reader-text
+		display none
+	.search-form
+		position relative
+	// vyhledávací pole
+	input[type="search"]
+		@extend .inp-text
+		padding-right 10px + 36px
+	// inp fix vyhledávacího pole
+	label
+		position relative
+		display block
+		padding 0 ( 24px + 36px ) 0 0
+		input
+			width 100%
+			margin-right ( -24px - 36px )
+		// ikonka vyhledávání
+		&:before
+			@extend $icon
+			font-size 16px
+			position absolute
+			right 12px
+			top 50%
+			margin-top -8px
+		@extend .icon-search
+
+
+	// tlačítko průhledné je překryté přes ikonku
+	.search-submit
+	#searchsubmit
+		position absolute
+		right 2px
+		top 2px
+		background none
+		border none
+		padding 0
+		text-indent 100%
+		white-space nowrap
+		overflow hidden
+		size 36
+
+.widget_calendar
+	position relative
+	th
+	td
+		padding 6px 0 0
+		border none
+		text-align center
+		font-size 18px
+
+	th
+		padding-top 0
+	th
+	caption
+	tfoot td
+		font-size 15px
+	tfoot
+		td
+			padding-top 10px
+			text-align left
+		#next
+			text-align right
+
+	caption
+		position absolute
+		right 0
+		top -3px
+
+
+
+.widget_rss
+	.box-title
+		a:first-child
+			display none
+		a
+			text-decoration none
+	ul
+		margin 0
+		padding 0
+	li
+		margin 0 0 15px
+		padding 0
+		&:before
+			display none
+		.rsswidget
+			display block
+			text-decoration none
+			&:hover
+				text-decoration underline
+		.rss-date
+			display block
+			margin-bottom $marginBottom
+			font-size 14px
+		.rssSummary
+			display block
+			margin-bottom $marginBottom
+		cite
+			font-style normal
+
+.widget_instagram
+.widget_action
+	.box-title
+		margin-bottom 20px
+	ul
+		font-size 0px
+		inline-list(50%, $font)
+		margin 0 0 -20px -20px
+	li
+		padding 0 0 20px 20px
+		box-sizing border-box
+
+.widget_video
+	.box-title
+		margin-bottom 20px
+
+.widget_twitter
+	.text
+		display block
+	li
+		margin-bottom 15px
+
+.widget_portfolio
+	.box-title
+		margin-bottom 20px
+	li
+		margin-bottom 15px
+
+.widget_social
+	ul
+		padding-top 5px
+		margin 0 0 -10px -10px
+	li
+		display inline-block
+		margin 0 0 10px 10px
+		line-height 24px
+	a
+		text-decoration none
+	.icon
+		font-size 24px
+
+
+/*! #editable - common */
+
+
+.widget_calendar
+	tbody td
+		font-weight 700 /*! sn_css_h1_weight */
+
+.widget_rss
+	li
+		.rsswidget
+			font-weight 700 /*! sn_css_heading_weight */
+
+.box-title
+	#main &
+		border-bottom-color $colorGrey /*! sn_global_text_secondary_color */
+
+.widget_rss
+	li
+		cite
+			color $colorGrey /*! sn_global_text_secondary_color */
+
+/*! /editable */

@@ -1,0 +1,140 @@
+#menu-main
+	text-transform uppercase
+
+	ul
+		font-size 0px
+		margin -10px 0 -10px 0
+	a
+		display block
+		position relative
+		text-decoration none
+
+	li
+		position relative
+		display inline-block
+		vertical-align top
+		font-size 16px
+		line-height 20px
+		margin 20px 0 20px 40px
+		padding 0
+		&:before
+			display none
+		&.has-submenu
+			> a
+				padding-right 22px
+				margin-right -5px
+				@extend .icon-dropdown
+				&:before
+					@extend $icon
+					position absolute
+					right 0
+					top 50%
+					margin-top -5px
+					font-size 9px
+					@media screen and (-webkit-min-device-pixel-ratio:0)
+						margin-top -3px
+		ul
+			position relative
+			display none
+			padding 6px 0
+			border 1px solid transparent
+			margin 15px -5px 0
+			text-align left
+			&:before
+			&:after
+				content ''
+				position absolute
+				top -10px
+				left 17px
+				border 10px solid transparent
+				border-top 0px
+			&:after
+				border-width 0 9px 9px
+				left 18px
+				top -9px
+			// Only one level
+			ul
+				display none
+			li
+				z-index 2
+				display block
+				padding 0
+				margin 0px 0 0
+				&:first-child
+					//margin-top -27px
+					//padding-top 10px
+				a
+					padding 7px 16px
+
+
+	@media(max-width: 1000px)
+
+		ul
+			display none
+			margin-top 20px
+			.show-menu &
+				display block
+		li
+			display block
+			margin 0 0 20px
+			&.has-submenu
+				> a
+					&:before
+						display none
+
+	@media(min-width: 1001px)
+		> ul > li
+			> ul
+				position absolute
+				left -5000px
+				top 120%
+				opacity 0
+				width 200px
+				display block
+				transition opacity .6s ease-out, top .3s ease
+				margin 0
+
+		> ul > li:hover
+			z-index 2
+			margin-top 0
+			margin-bottom 0
+			padding-top 20px
+			padding-bottom 20px
+			> ul
+				left -17px
+				top 100%
+				opacity 1
+
+
+/*! #editable - common */
+#menu-main
+	a
+		color $colorMenu /*! sn_header_menu_color */
+	.current-menu-item > a,
+	.current-menu-ancestor > a,
+	.current_page_parent > a,
+	a:hover
+		color $colorMenuHover /*! sn_header_menu_color_hover */
+
+	> ul > li:hover > a
+		color $colorMenuHover /*! sn_header_menu_color_hover */
+
+	li
+		ul
+			border-color #ebebeb /*! sn_header_submenu_border */
+			background #fff /*! sn_header_submenu_bg */
+			&:before
+				border-bottom-color #ebebeb /*! sn_header_submenu_border */
+			&:after
+				border-bottom-color #fff /*! sn_header_submenu_bg */
+
+.error404
+	#menu-main
+		.current_page_parent > a
+			color $colorMenu /*! sn_header_menu_color */
+		.current_page_parent > a:hover
+			color $colorMenuHover /*! sn_header_menu_color_hover */
+
+
+/*! /editable */
+

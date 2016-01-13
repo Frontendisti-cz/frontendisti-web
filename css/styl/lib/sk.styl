@@ -1,0 +1,78 @@
+inline-block($align = top, $isBlock = true)
+	display inline-block
+	vertical-align $align
+	if $isBlock && support-for-ie
+		.ie7 &
+			display inline
+			zoom 1
+
+inline-list($width, $fontSize)
+	font-size 0px
+	> *
+		inline-block()
+		if $width isnt false
+			width $width
+		font-size $fontSize
+
+inline-list-scroll-extend()
+	position relative
+	white-space nowrap
+	overflow hidden
+	overflow-x auto
+	> * > *
+		white-space normal
+	.js &
+		overflow-x hidden
+
+inline-list-scroll($width, $font)
+	inline-list($width, $font)
+	inline-list-scroll-extend()
+
+// Clearování flotů
+clearfix()
+	zoom 1 if support-for-ie
+	&:after
+	&:before
+		content ''
+		display table
+		clear both
+
+
+// Skrytí textu
+text-hide()
+	font 0px/0px a
+	color transparent
+	text-decoration none
+
+// Rozměry
+size($width = false, $height = false)
+	if unit($width) is ''
+		$width = unit($width, 'px')
+
+	if $height
+		if unit($height) is ''
+			$height = unit($height, 'px')
+		width $width
+		height $height
+	else
+		width $width
+		height $width
+
+
+// PX do EM
+pxToEm($from, $to)
+	unit(($to/$from), em)
+
+// Vertikální zarovnání obsahu
+box-vertical($align = middle)
+	&:before
+	.before
+		content ''
+		display inline-block
+		height 100%
+		margin-right -0.25em
+		vertical-align $align
+
+// Převádí z Nib base64 do obrázku
+to-image(url, base64)
+	'url(%s)' % data-to-image(unquote(url), base64)

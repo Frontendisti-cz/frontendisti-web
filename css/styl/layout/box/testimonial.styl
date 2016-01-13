@@ -1,0 +1,45 @@
+.box-testimonial
+	padding 15px 20px
+	position relative
+	margin-bottom 130px
+	.img
+		text-align center
+		line-height 80px
+	.text
+		margin-bottom $marginDiff
+	.avatar
+		display block
+		position absolute
+		bottom -115px
+		left 50%
+		margin-left -40px
+		width 86px
+		img
+			border-radius 100px
+
+	.after
+		//content ""
+		size 0
+		border 15px solid transparent
+		border-width 15px 15px 0
+		position absolute
+		bottom -15px
+		left 50%
+		margin-left -15px
+
+	.col > &
+		margin-top 5px
+	&.no-image
+		margin-bottom 19px
+		.after
+			display none
+
+
+/*! #editable - common */
+
+.box-testimonial
+	background $colorGrey /*! sn_global_text_secondary_color */
+	.after
+		border-top-color $colorGrey /*! sn_global_text_secondary_color */
+
+/*! /editable */

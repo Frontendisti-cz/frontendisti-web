@@ -1,0 +1,43 @@
+.message
+	padding 16px 25px 16px
+	margin $marginTopFill 0
+	position relative
+	p
+		margin-bottom 0
+		margin-right 80px
+	.close
+		position absolute
+		top 24px
+		right 20px
+		text-decoration none
+		line-height 13px
+		size 13
+		text-align center
+		&:hover
+			opacity .5
+	.icon
+		font-size 13px
+		inline-block(top)
+
+.message-notice
+	background $colorGrey
+	.icon
+		color $color
+.message-success
+	background $colorOk
+	color $colorWhite
+	.icon
+		color #fff
+.message-error
+	background $colorError
+	color $colorWhite
+	.icon
+		color #fff
+
+
+/*! #editable - common */
+
+.message-notice
+	background $colorGrey /*! sn_global_text_secondary_color */
+
+/*! /editable */

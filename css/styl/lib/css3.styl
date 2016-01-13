@@ -1,0 +1,164 @@
+/*
+ * Helper to find out is the list of arguments have commas
+ */
+
+is-comma-list()
+	return match('\), \(', ''+arguments)
+
+/*
+ * Literal joining
+ */
+
+literal-join(string, literals)
+	result = unquote('')
+	first = true
+	for args in literals
+		subresult = unquote('')
+		for arg in args
+			subresult = subresult arg
+		if first
+			result = subresult
+			first = false
+		else
+			result = s('%s%s%s', result, unquote(string), subresult)
+	return result
+
+/*
+ * Replacing one value with another
+ */
+
+replace-args(args,argument,val)
+	result = ()
+	// Checking if there are values divided by comma
+	if is-comma-list(args)
+		for subargs in args
+			subresult = ()
+			for arg in subargs
+				arg = unquote(val) if arg == argument
+				push(subresult, arg)
+			subresult = literal-join(' ', subresult) if length(subresult) > 1
+			push(result, subresult)
+		result = literal-join(', ', result)
+	else
+		for arg in args
+			arg = unquote(val) if arg == argument
+			push(result, arg)
+	return result
+
+vendor($prop, $vendors, $arguments)
+	for $vendor in $vendors
+		$newargs = $arguments
+		if $prop in ('transition' 'transition-property')
+			$newargs = replace-args($arguments, transform, '-' + $vendor + '-transform')
+		-{$vendor}-{$prop} $newargs
+	{$prop} $arguments
+
+/*replaceVendor()
+	for $arguments in arguments
+		for $args in $arguments
+			test $args*/
+
+border-radius()
+	$vendors = webkit moz
+	vendor('border-radius', $vendors, arguments)
+
+box-shadow()
+	$vendors = webkit moz
+	vendor('box-shadow', $vendors, arguments)
+
+box-sizing()
+	$vendors = webkit moz
+	vendor('box-sizing', $vendors, arguments)
+
+background-size()
+	$vendors = webkit moz
+	vendor('background-size', $vendors, arguments)
+
+background-clip()
+	$vendors = webkit moz
+	vendor('background-clip', $vendors, arguments)
+
+background-origin()
+	$vendors = webkit moz
+	vendor('background-origin', $vendors, arguments)
+
+// Transitions
+transition()
+	$vendors = webkit moz ms o
+	vendor('transition', $vendors, arguments)
+
+transition-property()
+	$vendors = webkit moz ms o
+	vendor('transition-property', $vendors, arguments)
+
+transition-duration()
+	$vendors = webkit moz ms o
+	vendor('transition-duration', $vendors, arguments)
+
+transition-timing-function()
+	$vendors = webkit moz ms o
+	vendor('transition-timing-function', $vendors, arguments)
+
+transition-delay()
+	$vendors = webkit moz ms o
+	vendor('transition-delay', $vendors, arguments)
+
+// Animation
+animation()
+	$vendors = webkit moz ms
+	vendor('animation', $vendors, arguments)
+
+// Transform
+transform()
+	$vendors = webkit moz ms o
+	vendor('transform', $vendors, arguments)
+transform-origin()
+	$vendors = webkit moz ms o
+	vendor('transform-origin', $vendors, arguments)
+
+user-select()
+	$vendors = webkit moz ms o
+	vendor('user-select', $vendors, arguments)
+
+opacity(n, $ie = $support-for-ie)
+	opacity n
+	if $ie
+		filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+placeholder($color, $focusColor = null)
+	&::-moz-placeholder
+		color $color
+		// fix ff 19+ který nastavuje defaultně opacity .7
+		opacity(1, false)
+	&::-webkit-input-placeholder
+		color $color
+		opacity(1, false)
+	if $focusColor
+		&:focus::-moz-placeholder
+			color $focusColor
+		&:focus::-webkit-input-placeholder
+			color $focusColor
+
+tap-highlight-color()
+	$vendors = webkit
+	vendor('tap-highlight-color', $vendors, arguments)
+
+touch-callout()
+	$vendors = webkit
+	vendor('touch-callout', $vendors, arguments)
+
+$linear-gradient(color1, color2)
+	background -webkit-gradient(linear, left top, left bottom, color-stop(0%,color1), color-stop(100%, color2))
+	background -webkit-linear-gradient(top, color1 0%, color2 100%)
+	background -moz-linear-gradient(top, color1 0%, color2 100%)
+	background -ms-linear-gradient(top, color1 0%, color2 100%)
+	background -o-linear-gradient(top, color1 0%, color2 100%)
+	background linear-gradient(top, color1 0%, color2 100%)
+
+$linear-gradient-all(string)
+	background -webkit-linear-gradient(unquote(string))
+	background -moz-linear-gradient(unquote(string))
+	background -ms-linear-gradient(unquote(string))
+	background -o-linear-gradient(unquote(string))
+	background linear-gradient(unquote(string))
+

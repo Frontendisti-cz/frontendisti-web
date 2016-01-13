@@ -1,0 +1,13 @@
+.box-slides
+	margin $marginFill
+	position relative
+	overflow hidden
+	z-index 2
+	.slide
+		width 100%
+		margin 0
+		//transform translate3d(0px, 0px, 1px)
+		+ .slide
+			display none
+		+ .cycle-slide
+			display block

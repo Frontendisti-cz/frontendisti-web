@@ -1,0 +1,52 @@
+// input text
+.inp-text
+	display block
+	border 2px solid transparent
+	padding 6px 10px
+	background $colorWhite 100% 50% no-repeat
+	font-family $font
+	font-size 16px
+	line-height 24px
+	height 24px
+	border-radius 0px
+
+/*! #editable - common */
+.inp-text
+	color $color /*! sn_global_text_color */
+	border-color $colorGrey /*! sn_global_text_secondary_color */
+	&:focus
+		border-color $color /*! sn_global_text_color */
+/*! /editable */
+
+textarea.inp-text
+	height auto
+
+.inp-fix
+	position relative
+	display block
+	padding 0 24px 0 0
+	.inp-text
+		width 100%
+		margin 0 -24px 0 0
+
+
+label
+	display block
+
+
+select
+	@extend .inp-text
+	width 100%
+	height 40px
+	box-sizing border-box
+
+// mozila select letter spacing
+@-moz-document url-prefix()
+	select
+		text-indent -2px
+
+@media (-webkit-min-device-pixel-ratio:0)
+	select
+		-webkit-appearance button
+		padding-right 22px
+		background-image url($img'bg/select.png')

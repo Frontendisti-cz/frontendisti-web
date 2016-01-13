@@ -1,0 +1,120 @@
+/*!
+ *	Grid
+ */
+
+.row
+	position relative
+	margin 0
+	padding 0
+	clearfix()
+
+.row-main
+	@extend .row
+	margin 0 auto
+	//padding 0 50px
+	border $gutter solid transparent
+	border-width 0 $gutter
+	max-width $width
+	@media(max-width: 1000px)
+		max-width 750px
+		border-width 0 $gutterT
+	@media(max-width: 700px)
+		max-width 550px
+
+.grid
+	display block
+	text-align left
+	font-size 0px
+	margin-left $gutter * (-1)
+	margin-top $marginTop
+	// pokud je grid poslední v row-main
+	// odečtu spodní margin sloupců
+	.row-main > &:last-child
+		margin-bottom ($marginDiff + 5) * (-1)
+	// nadpis před gridem
+	// vypnut odsazení z vrchu
+	h1 + &,
+	.h1 + &,
+	h2 + &,
+	.h2 + &,
+	h3 + &,
+	.h3 + &,
+	h4 + &,
+	.h4 + &,
+	h5 + &,
+	.h5 + &,
+	h6 + &,
+	.h6 + &
+		margin-top $marginDiff
+	// taby před gridem
+	// nastavím menší margin protože taby mají svůj vnitřní
+	.tabs + &
+		margin-top $marginDiff
+	// nadpisy následující po gridu
+	&
+		+ h1
+		+ .h1
+		+ h2
+		+ .h2
+		+ h3
+		+ .h3
+		+ h4
+		+ .h4
+		+ h5
+		+ .h5
+		+ h6
+		+ .h6
+			margin-top 0
+	// grid za gridem
+	& + .grid
+		margin-top 0
+
+	.img-content + &
+		margin-top 43px
+
+.grid-center
+	text-align center
+.grid-right
+	text-align right
+.grid-middle .col
+	vertical-align middle
+.grid-bottom .col
+	vertical-align bottom
+
+.col
+	position relative
+	inline-block(top)
+	box-sizing border-box
+	font-size $fontSize
+	padding-left $gutter
+	margin-bottom $marginDiff + 5
+	text-align left
+	width 100%
+
+.col-side
+	padding-top 10px
+
+
+@media(min-width: 1001px)
+	// sloupce
+	for $col in $cols
+		// množiny
+		$parts = 1..$col
+		for $part in $parts
+			// jednosloupcový grid nebo množiny
+			if $col is 1 or $part is not $col
+				.col-{$part}-{$col}
+					width unit(100 / $col * $part, '%')
+				.col-{$part}-{$col}.col-fixed
+					width 100%
+					max-width unit( ( $width - ($col - 1) * $gutter ) / $col * $part +  ($part - 1) * $gutter , 'px')
+				.push-{$part}-{$col}
+					left unit(100 / $col * $part, '%')
+				.pull-{$part}-{$col}
+					left unit(-100 / $col * $part, '%')
+
+/*.col-content
+	width 72%
+
+.col-side
+	width 28%*/
